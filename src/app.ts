@@ -19,5 +19,12 @@ export class App {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended:true}));
         this.app.use(express.static('public'));
+        this.app.use(function(req, res, next) {
+            if((!req.secure) && (req.get('X-Forwarded-Proto') !== 'https')) {
+                res.redirect('https://' + req.get('Host') + req.url);
+            }
+            else
+                next();
+        });
     }
 }
