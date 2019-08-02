@@ -8,7 +8,7 @@ export class MongoConnectDAO {
     public async establishConnection(): Promise<boolean> {
         let client;
         try {
-            let uri: string = "mongodb+srv://developer:developer@mycluster-eak33.mongodb.net/test?retryWrites=true&w=majority";
+            let uri: string = "mongodb+srv://xxxx:xxxxx@mycluster-eak33.mongodb.net/test?retryWrites=true&w=majority";
             client = await MongoClient.connect(uri, { useNewUrlParser: true });
             MongoConnectDAO.poemCollection = client.db("whisphersofthewind_db").collection("poetry");
             logger.info('Connection to Mongodb- Successful.');
