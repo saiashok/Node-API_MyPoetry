@@ -1,5 +1,5 @@
 import { IPoem } from "./IPoemModel";
-import { IErrorResponse } from "./IerrorModel";
+import { IErrorResponse } from "./IErrorModel";
 
 export interface IGetPoem{
     response?: IPoem;
